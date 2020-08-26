@@ -1,0 +1,80 @@
+#!/usr/bin/env pipenv-shebang
+
+import argparse
+import os.path
+import subprocess
+import sys
+
+from os import path
+from subprocess import PIPE
+from rich import print
+from rich.console import Console
+
+MEDIABOX_HOME = "/data/ssd/mediabox/repo"
+DOCKER_COMPOSE_BASE_CMD = "docker-compose -f docker-compose.yml -f docker-compose.torrents-on-vpn.yml -f docker-compose.plex-hw.yml -f docker-compose.traefik.yml"
+
+
+def main():
+    print("")
+
+    if not path.exists(MEDIABOX_HOME):
+        error_console = Console(file=sys.stderr)
+        error_console.print(
+            ":x: [bold red]Mediabox could not be found at [/bold red]{} \n".format(
+                MEDIABOX_HOME
+            )
+        )
+        sys.exit(1)
+
+    parser = argparse.ArgumentParser(description="Mediabox utils.")
+    parser.add_argument("-u", "--up", action="store_true", help="Starts the stack")
+    parser.add_argument("-d", "--down", action="store_true", help="Stops the stack")
+    parser.add_argument(
+        "-r", "--restart", action="store_true", help="Restarts the stack"
+    )
+
+    args = parser.parse_args()
+    console = Console()
+
+    if args.up:
+        console.log("Starting Mediabox...\n")
+        up()
+    elif args.down:
+        console.log("Stopping Mediabox...\n")
+        down()
+    elif args.restart:
+        console.log("Restarting Mediabox...\n")
+        restart()
+
+
+def up():
+    compose = DOCKER_COMPOSE_BASE_CMD.split()
+    compose.extend(["up", "-d"])
+    run_command(compose)
+
+
+def down():
+    compose = DOCKER_COMPOSE_BASE_CMD.split()
+    compose.extend(["down"])
+    run_command(compose)
+
+
+def restart():
+    down()
+    up()
+
+
+def run_command(command):
+    debugcommand = " - {0}".format(" ".join(command))
+    print(debugcommand)
+
+    popen = subprocess.Popen(
+        command, cwd=MEDIABOX_HOME
+    )
+    popen.wait(500)  # wait a little for docker to complete
+
+    return popen
+
+
+if __name__ == "__main__":
+    main()

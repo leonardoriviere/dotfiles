@@ -22,6 +22,7 @@ PACKAGES=(
     nodejs
     npm
     p7zip-full
+    pipenv
     python3-pip
     ranger
     tree

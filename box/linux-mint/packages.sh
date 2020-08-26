@@ -38,6 +38,7 @@ PACKAGES=(
     p7zip-full
     pavucontrol
     pidgin
+    pipenv
     playerctl
     python3-apt
     python3-dev
