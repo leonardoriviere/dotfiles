@@ -50,6 +50,7 @@
     ~/.bashrc: 
         path: .bashrc
         force: true
+    ~/.conkyrc: .conkyrc
     ~/.gitconfig: .gitconfig
     ~/.gtkrc-2.0:
         path: .gtkrc-2.0

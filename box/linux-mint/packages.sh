@@ -19,6 +19,7 @@ PACKAGES=(
     bashtop
     breeze-cursor-theme
     cargo
+    conky
     curl
     dmenu
     faba-icon-theme

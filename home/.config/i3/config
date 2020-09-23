@@ -16,6 +16,7 @@ exec_always --no-startup-id python3 /opt/thefanclub/overgrive/overgrive
 exec_always ~/.config/i3/scripts/autoname_workspaces.py --norenumber_workspaces --icon_list_format mathematician &
 exec_always --no-startup-id nm-applet # network-manager-gnome
 exec_always --no-startup-id docker
+exec_always --no-startup-id conky
 
 # start a terminal
 bindsym $super+Return exec --no-startup-id terminator
