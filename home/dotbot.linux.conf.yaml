@@ -22,7 +22,9 @@
         path: .dmrc
         force: true
     ~/.local/share/fonts: .local/share/fonts
-    ~/.local/share/applications: .local/share/applications
+    ~/.local/share/applications: 
+        path: .local/share/applications
+        force: true
     ~/.screenlayout: .screenlayout
     ~/.ssh/config: 
         path: .ssh/config
