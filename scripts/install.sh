@@ -29,10 +29,6 @@ elif [[ $machine == "Linux" ]]; then
 fi
 
 br
-info ">> Revealing secrets ..."
-bash ${CURRENT_DIR}/secrets.sh
-
-br
 banner ">>> Welcome to cmiranda's dotfiles <<<"
 br
 info_1 " Author       :" " Cristian Miranda | @crist_miranda"

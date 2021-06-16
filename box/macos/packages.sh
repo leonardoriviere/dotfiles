@@ -77,13 +77,10 @@ CASKS=(
 	discord
 	docker
 	dozer
-	duplicati
 	element
 	evernote
 	firefox
-	homebrew/cask-versions/firefox-developer-edition
 	gitify
-	gitkraken
 	google-backup-and-sync
 	google-chrome
 	gpg-suite
@@ -92,19 +89,15 @@ CASKS=(
 	jitsi-meet
 	kindle
 	maccy
-	microsoft-office
-	nordvpn
 	openvpn-connect
 	paragon-extfs
 	paragon-ntfs
-	pgadmin4
-	postman
-	slack
 	spotify
 	steam
 	telegram
 	the-unarchiver
 	transmission
+	tunnelblick
 	visual-studio-code
 	whatsapp
 	zoomus
@@ -171,4 +164,4 @@ npm i -g libgen-downloader
 # SDKMAN
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-sdk install java 11.0.8-amzn
+sdk install java 11.0.11.hs-adpt

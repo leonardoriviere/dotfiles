@@ -41,7 +41,7 @@ info ">>> General: Disable auto-correct"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false >> $LOG_FILE 2>&1
 
 info ">>> General: Save screenshots to the desktop"
-defaults write com.apple.screencapture location -string "${HOME}/Desktop" >> $LOG_FILE 2>&1
+defaults write com.apple.screencapture location -string "${HOME}/Documents/Screenshots" >> $LOG_FILE 2>&1
 
 info ">>> General: Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
 defaults write com.apple.screencapture type -string "png" >> $LOG_FILE 2>&1
